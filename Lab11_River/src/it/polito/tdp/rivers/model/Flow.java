@@ -30,6 +30,14 @@ public class Flow {
 		this.flow = flow;
 	}
 
+	public River getRiver() {
+		return river;
+	}
+
+	public void setRiver(River river) {
+		this.river = river;
+	}
+
 	@Override
 	public String toString() {
 		return "Flow [day=" + day + ", flow=" + flow + ", river=" + river + "]";

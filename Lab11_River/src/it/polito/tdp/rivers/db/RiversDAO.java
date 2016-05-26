@@ -24,10 +24,11 @@ public class RiversDAO {
 
 			ResultSet res = st.executeQuery();
 
-			while (res.next()) {
-			}
-			rivers.add(new River(res.getInt("id"), res.getString("name")));
+			while (res.next())
+				rivers.add(new River(res.getInt("id"), res.getString("name")));
 
+			st.close();
+			res.close();
 			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,11 +51,12 @@ public class RiversDAO {
 
 			ResultSet res = st.executeQuery();
 
-			while (res.next()) {
+			while (res.next())
 				flows.add(new Flow(res.getDate("day").toLocalDate(), res.getDouble("flow"),
 						rivers.get(rivers.indexOf(new River(res.getInt("river"))))));
-			}
 
+			st.close();
+			res.close();
 			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();

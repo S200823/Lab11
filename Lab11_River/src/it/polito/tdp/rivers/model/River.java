@@ -11,11 +11,13 @@ public class River {
 
 	public River(int id) {
 		this.id = id;
+		flows = new ArrayList<Flow>();
 	}
 
 	public River(int id, String name) {
 		this.id = id;
 		this.name = name;
+		flows = new ArrayList<Flow>();
 	}
 
 	public String getName() {
@@ -42,6 +44,10 @@ public class River {
 		if (flows == null)
 			flows = new ArrayList<Flow>();
 		return flows;
+	}
+
+	public void addFlow(Flow flow) {
+		this.flows.add(flow);
 	}
 
 	@Override
